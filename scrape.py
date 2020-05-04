@@ -9,6 +9,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 results = soup.find(id = 'SearchResults')
 jobElements = results.find_all('section', class_='card-content')
 
+#uncomment when looking for actual positions and not just links
 #searching for a specific job type (not right because case and whitespace matters)
 #myJobs = results.find_all("h2", string='Python Developer')
 myJobs = results.find_all('h2', string=lambda text: 'java' in text.lower())
